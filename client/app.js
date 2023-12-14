@@ -1,6 +1,7 @@
 import Dashbord from "./pages/Dashbord.js";
 import Posts from "./pages/Posts.js";
 import Products from "./pages/Products.js";
+import NotFound from "./pages/NotFound.js";
 
 function router(params) {
   const routes = [
@@ -16,6 +17,10 @@ function router(params) {
       path: "/products",
       view: Products,
     },
+    {
+      path: "/not-found",
+      view: NotFound,
+    },
   ];
   console.log("hi 1");
   const potentialRoutes = routes.map((item) => {
@@ -30,7 +35,10 @@ function router(params) {
   // console.log(match.route.view());
   if (!match) {
     match = {
-      route: { path: "/not-found", view: () => console.log("not-found page") },
+      route: {
+        path: "/not-found",
+        view: NotFound,
+      },
       isMatch: true,
     };
   }
