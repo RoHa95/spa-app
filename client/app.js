@@ -51,6 +51,16 @@ function navigateTo(url) {
   router();
 }
 window.addEventListener("popstate", router);
+
+//sidbar toggler
+const sidebarToggler = document.querySelector(".sidebar-toggler");
+const sidebar = document.querySelector(".nav");
+const versionLabel = document.querySelector(".app-version-label");
+
+sidebarToggler.addEventListener("click", () => {
+  sidebar.classList.toggle("mini-sidebar");
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   document.body.addEventListener("click", (e) => {
     console.log("hi load");
